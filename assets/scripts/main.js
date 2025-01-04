@@ -7,6 +7,7 @@ divider.className = 'divider';
 
 const heading = document.createElement('h1');
 heading.textContent = 'Gian Zignago';
+heading.className = 'highlight';
 
 const paragraph1 = document.createElement('p');
 paragraph1.innerHTML = 'Software Engineer at Cisco Meraki<br>08.2023 - 09.2024';
