@@ -12,43 +12,50 @@
             padding: 0;
             background-color: black;
             font-family: 'Rubik', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
             color: white;
-        }
-
-        /* Wrapper ensures black borders */
-        .image-container-wrapper {
+            overflow-x: auto; /* Allow horizontal scrolling */
             display: flex;
-            justify-content: center;
-            background-color: black; /* Ensures black borders */
-            width: 100%; /* Full width of the viewport */
+            justify-content: flex-start; /* Align content to the left */
+            align-items: flex-start; /* Align content to the top */
         }
 
-        /* Image container */
+        /* Main wrapper for the content */
+        .main-wrapper {
+            width: 1000px; /* Fixed width of the content */
+            min-height: 100vh; /* Full viewport height */
+            margin: 0 auto; /* Center the content horizontally when the viewport is wider */
+            position: relative;
+        }
+
+        /* Image container wrapper */
+        .image-container-wrapper {
+            width: 100%; /* Match the main container's width */
+            height: 600px; /* Fixed height for the image */
+            overflow: hidden; /* Prevent unwanted content overflow */
+        }
+
         .image-container {
             position: relative;
-            width: 100%; /* Let the image scale responsively */
-            max-width: 1000px; /* Fixed maximum width */
+            width: 100%; /* Keep image container the same size as the wrapper */
+            height: 100%;
         }
 
         .profile-image {
-            width: 100%; /* Ensure the image fits the container */
-            height: auto; /* Maintain aspect ratio */
+            width: 1000px; /* Fixed width for the image */
+            height: 600px; /* Fixed height for the image */
+            object-fit: cover; /* Maintain aspect ratio */
+            display: block; /* Ensure consistent layout behavior */
         }
 
-        /* Overlay Styling */
         .overlay {
             position: absolute;
-            bottom: 10%; /* Position overlay text vertically on the image */
-            left: 10%; /* Position overlay text horizontally */
+            bottom: 25px; /* Static position from the bottom of the image */
+            left: 50px; /* Static position from the left of the image */
+            white-space: nowrap; /* Prevent text wrapping */
             color: white;
-            line-height: 1.2; /* Improve text readability */
-            font-size: 28px; /* Adjust text size */
+            line-height: 0.1;
+            font-size: 28px;
             font-weight: 300;
-            max-width: 80%; /* Prevent text from overflowing on smaller screens */
         }
 
         .underline {
@@ -56,21 +63,21 @@
             background-size: 100% 8px;
             height: 8px;
             width: 185px;
-            margin-top: 4px;
-            margin-bottom: 5px;
+            margin-top: -15px;
+            margin-bottom: -12px;
         }
 
         /* Content Below Image */
         .content {
-            max-width: 90%; /* Scale content width for smaller screens */
-            text-align: left;
-            margin: 20px auto;
+            margin-top: 40px; /* Add spacing below the image */
+            white-space: nowrap; /* Prevent body text wrapping */
+            margin-left: 50px;
         }
 
         .content h3 {
             margin-top: 14px;
             font-weight: 600;
-            font-size: 1.8em;
+            font-size: 18px;
         }
 
         .content ul {
@@ -82,7 +89,12 @@
         .content ul li {
             margin-bottom: 15px;
             line-height: 1.4;
-            font-size: 1.1em;
+            font-size: 18px;
+        }
+
+        .content ul lo {
+            line-height: 1.4;
+            font-size: 18px;
         }
 
         .contact {
@@ -92,7 +104,7 @@
         .contact a {
             color: white;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 18px;
         }
 
         .contact a:hover {
@@ -108,87 +120,53 @@
         a:hover {
             color: grey;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .image-container {
-                max-width: 100%; /* Allow image to scale down for smaller screens */
-                padding: 0 5%; /* Add padding to avoid text cutoff */
-            }
-
-            .overlay {
-                font-size: 5vw; /* Scale text for smaller screens */
-                left: 5%; /* Adjust left alignment */
-                max-width: 90%; /* Ensure overlay text doesn't overflow */
-            }
-
-            .content {
-                text-align: left;
-                font-size: 1em;
-            }
-
-            .content ul li {
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .overlay {
-                font-size: 4.5vw; /* Further reduce text size */
-                left: 5%;
-                bottom: 5%;
-                line-height: 1.2;
-            }
-
-            .content ul li {
-                font-size: 0.8em;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Wrapper ensures black borders -->
-    <div class="image-container-wrapper">
-        <div class="image-container">
-            <img src="assets/images/DSC02772-3.jpg" alt="Gian Zignago" class="profile-image">
-            <div class="overlay">
-                <p><b>Gian Zignago</b> is a software engineer</p>
-                <div class="underline"></div>
-                <p>focused on networks and scalability.</p>
+    <div class="main-wrapper">
+        <!-- Image Section -->
+        <div class="image-container-wrapper">
+            <div class="image-container">
+                <img src="assets/images/DSC02772-3.jpg" alt="Gian Zignago" class="profile-image">
+                <div class="overlay">
+                    <p><b>Gian Zignago</b> is a software engineer</p>
+                    <div class="underline"></div>
+                    <p>focused on networks and scalability.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Content Below Image -->
-    <div class="content">
-        <h3><a href="/resume.pdf" target="_blank">[Resume]</a></h3>
-        <ul>
-            <li><b>Education</b></li>
-            <li>M.S. Computer Science<br>University of California, Los Angeles, 2024</li>
-            <li>B.S. Computer Science<br>University of Missouri, 2023</li>
-        </ul>
-        <ul>
-            <li><b>Experience</b></li>
-            <li>Cisco Meraki - Software Engineer</li>
-            <li>Cisco Meraki - Software Engineer Intern</li>
-            <li>Johns Hopkins University Applied Physics Lab - Software Engineer Intern</li>
-            <li>MITRE - Software Engineer Intern</li>
-        </ul>
-        <ul>
-            <li><b>Projects</b></li>
-            <li>M-SAT</li>
-            <li>MRDT</li>
-            <li>Multilingual LLM</li>
-            <li>Tiger Identification</li>
-            <li>Zero Trust Drone Networking</li>
-        </ul>
-        <ul>
-            <li><b>Contact</b></li>
-            <li><a href="mailto:contact@gianzignago.com">contact@gianzignago.com</a></li>
-        </ul>
-        <div class="contact">
-            <a href="https://www.linkedin.com/in/gianzignago" target="_blank">[LinkedIn]</a>
-            <a href="https://github.com/gianzignago" target="_blank">[GitHub]</a>
+        <!-- Content Section -->
+        <div class="content">
+            <h3><a href="/resume.pdf" target="_blank">[Resume]</a></h3>
+            <ul>
+                <lo><b>Education</b></lo>
+                <li>M.S. Computer Science<br>University of California, Los Angeles, 2024</li>
+                <li>B.S. Computer Science<br>University of Missouri, 2023</li>
+            </ul>
+            <ul>
+                <lo><b>Experience</b></lo>
+                <li>Cisco Meraki - Software Engineer</li>
+                <li>Cisco Meraki - Software Engineer Intern</li>
+                <li>Johns Hopkins University Applied Physics Lab - Software Engineer Intern</li>
+                <li>MITRE - Software Engineer Intern</li>
+            </ul>
+            <ul>
+                <lo><b>Projects</b></lo>
+                <li>M-SAT</li>
+                <li>MRDT</li>
+                <li>Multilingual LLM</li>
+                <li>Tiger Identification</li>
+                <li>Zero Trust Drone Networking</li>
+            </ul>
+            <ul>
+                <lo><b>Contact</b></lo>
+                <li><a href="mailto:contact@gianzignago.com">contact@gianzignago.com</a></li>
+            </ul>
+            <div class="contact">
+                <a href="https://www.linkedin.com/in/gianzignago" target="_blank">[LinkedIn]</a>
+                <a href="https://github.com/gianzignago" target="_blank">[GitHub]</a>
+            </div>
         </div>
     </div>
 </body>
