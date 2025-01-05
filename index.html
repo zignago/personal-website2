@@ -3,33 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Gian Zignago</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: white;
-            font-family: Arial, sans-serif;
-        }
-        .container {
+            background-color: black; /* Match the image's background */
+            font-family: 'Rubik', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
         }
-        .divider {
-            text-align: left;
-            max-width: 800px;
-            width: 100%;
-            color: black;
-        }
-        .highlight {
-            color: #2453ff;
-        }
-    </style>    
+
+        /* Image Container */
+    .image-container {
+        position: relative; /* Allows positioning of overlay elements */
+        display: inline-block; /* Keeps image and overlay together */
+    }
+
+    .profile-image {
+        width: 1000px; /* Adjust image width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Overlay Styling */
+    .overlay {
+        position: absolute;
+        bottom: 10%; /* Position overlay text vertically on the image */
+        left: 12%; /* Position overlay text horizontally */
+        color: white; /* Text color */
+        line-height: .9; /* Improve text readability */
+        font-size: 28px; /* Adjust text size */
+        font-weight: 300;
+    }
+
+    /* Underline GIF Styling */
+    .underline {
+        background: url('assets/images/underline.gif') no-repeat left center; /* Align GIF to the left */
+        background-size: 100% 8px; /* Adjust the size of the GIF */
+        height: 7px; /* Match GIF height */
+        width: 185px; /* Adjust underline width */
+        margin-top: 4px; /* Add slight spacing above the underline */
+        margin-bottom: 5px; /* Add slight spacing below the underline */
+    }
+
+    /* Regular Text */
+    .overlay p {
+        margin: 0;
+    }
+
+    /* Content Below Image */
+    .content {
+        max-width: 800px;
+        margin-top: 10px;
+        margin-left: -230px; /* Match .overlay's left value */
+        text-align: left;
+    }
+
+    .content h2, .content h3 {
+        margin-top: 14px;
+        font-weight: 300;
+        color: white;
+    }
+
+    .content h3 {
+        margin-top: 15px;
+        color: white;
+    }
+
+    .content p, .content ul {
+        margin: 15px 0;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 300;
+        color: white;
+    }
+
+    .content ul {
+        list-style: none;
+        padding-left: 0;
+        color: white;
+        line-height: 1.1;
+        margin-bottom: 25px;
+    }
+
+    .content ul li {
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    /* Contact Section */
+    .contact {
+        margin-top: 20px;
+    }
+
+    .contact a {
+        text-decoration: none;
+        margin-right: 15px;
+        color: white;
+    }
+
+    .contact a:hover {
+        text-decoration: underline;
+        color: white;
+    }
+
+    a {
+        color: white; /* White color for links */
+        text-decoration: none; /* Remove underline */
+        font-size: inherit; /* Match the font size of the surrounding text */
+        font-weight: inherit; /* Match the font weight of the surrounding text */
+    }
+
+    /* Link hover effect */
+    a:hover {
+        color: #dd9c1d; /* Change link color to grey on hover */
+        text-decoration: none; /* Ensure underline remains removed on hover */
+    }
+</style>
 </head>
 <body>
-    <script src="assets/scripts/main.js"></script>
+    <div class="image-container">
+        <img src="assets/images/DSC02772-3.jpg" alt="Gian Zignago" class="profile-image">
+        <div class="overlay">
+            <p><b>Gian Zignago</b> is a software engineer</p>
+            <div class="underline"></div>
+            <p>focused on networks and scalability.</p>
+        </div>
+    </div>    
+
+    <!-- Content Below Image -->
+    <div class="content">
+        <h3>[Resume]</h3>
+
+        <ul>
+            <lo><b>Education</b></lo>
+            <li>M.S. Computer Science<br>University of California, Los Angeles, 2024</li>
+            <li>B.S. Computer Science<br>University of Missouri, 2023</li>
+        </ul>
+        <ul>
+            <lo><b>Experience</b></lo>
+            <li>Cisco Meraki - Software Engineer</li>
+            <li>Cisco Meraki - Software Engineer Intern</li>
+            <li>Johns Hopkins University Applied Physics Lab - Software Engineer Intern</li>
+            <li>MITRE - Software Engineer Intern</li>
+        </ul>
+        <ul>
+            <lo><b>Projects</b></lo>
+            <li>M-SAT</li>
+            <li>MRDT</li>
+            <li>Multilingual LLM</li>
+            <li>Tiger Identification</li>
+            <li>Zero Trust Drone Networking</li>
+        </ul>
+        <ul>
+            <lo><b>Contact</b></lo>
+            <li><a href="mailto:contact@gianzignago.com">contact@gianzignago.com</a></li>
+        </ul>
+        <div class="contact">
+            <a href="https://www.linkedin.com/in/gianzignago" target="_blank">[LinkedIn]</a>
+            <a href="https://github.com/gianzignago" target="_blank">[GitHub]</a>
+        </div>
+    </div>
 </body>
 </html>
