@@ -15,18 +15,28 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: flex-start;
             color: white;
         }
 
-        /* Image Container */
+        /* Full container for image with black borders */
+        .image-container-wrapper {
+            display: flex;
+            justify-content: center;
+            background-color: black; /* Ensures black borders */
+            width: 100%; /* Full width of the viewport */
+            height: auto; /* Adjust height based on the content */
+        }
+
+        /* Image container */
         .image-container {
             position: relative;
-            max-width: 90%; /* Ensure the image doesn't exceed screen width */
+            width: 1000px; /* Fixed width for the image */
         }
 
         .profile-image {
-            margin-top: 5vw;
-            width: 100%; /* Make the image fluid */
+            margin-top: 3vw;
+            width: 100%; /* Ensure the image fits the fixed container width */
             height: auto; /* Maintain aspect ratio */
         }
 
@@ -34,10 +44,10 @@
         .overlay {
             position: absolute;
             bottom: 10%; /* Position overlay text vertically on the image */
-            left: 10%; /* Position overlay text horizontally */
+            left: 12%; /* Position overlay text horizontally */
             color: white;
-            line-height: .00002; /* Improve text readability */
-            font-size: 3vw; /* Relative size for responsiveness */
+            line-height: .02; /* Improve text readability */
+            font-size: 28px; /* Adjust text size */
             font-weight: 300;
         }
 
@@ -45,20 +55,20 @@
             background: url('assets/images/underline.gif') no-repeat left center;
             background-size: 100% 8px;
             height: 8px;
-            width: 250px;
-            margin-top: 2px;
+            width: 185px;
+            margin-top: 1px;
             margin-bottom: 5px;
         }
 
         /* Content Below Image */
         .content {
-            max-width: 90%; /* Keep content width fluid */
+            max-width: 1000px; /* Match the image width */
+            margin: 20px auto; /* Center-align content */
             text-align: left;
-            margin-top: 20px;
         }
 
         .content h3 {
-            margin-top: 14px;
+            margin-top: 13px;
             font-weight: 600;
             font-size: 1.5em;
         }
@@ -96,7 +106,7 @@
         }
 
         a:hover {
-            color: grey;
+            color: #dd9c1d;
         }
 
         /* Responsive Design */
