@@ -105,7 +105,6 @@
         }
 
         .contact {
-            margin-top: 20px;
             margin-bottom: 75px;
         }
 
@@ -140,6 +139,55 @@
         a:hover {
             color: #dd9c1d;
         }
+
+        .experience-container {
+            margin-bottom: 40px;
+        }
+
+        .experience-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 0px;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-item a {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .experience-item a:hover .role {
+            color: white; /* Keep text white */
+        }
+
+        .role {
+            color: rgb(215, 215, 215);
+            font-size: 18px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .description {
+            color: rgb(170, 170, 170);
+            font-size: 17px;
+            line-height: 1.6;
+            max-width: 650px; /* Restrict the width of the description */
+            word-wrap: break-word; /* Ensure long words break */
+            overflow-wrap: break-word; /* Additional wrapping support */
+            display: inline-block; /* Ensure block-level wrapping */
+            white-space: normal; /* Allow text wrapping */
+            transition: color 0.3s ease;
+        }
+
+        .experience-item a:hover .description {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -157,32 +205,112 @@
         </div>
 
         <!-- Content Section -->
+         
         <div class="content">
+            
             <h3>
-                <a href="Gian_Zignago_Resume_2025.pdf" target="_blank">[Resume] </a>
-                <a href="https://www.linkedin.com/in/zignago" target="_blank">[LinkedIn] </a>   
-                <a href="https://github.com/zignago" target="_blank">[GitHub] </a>   
+                <a href="Gian_Zignago_Resume_2025.pdf" target="_blank">[resume]   </a>
+                <a href="https://www.linkedin.com/in/zignago" target="_blank"> [linkedin]   </a>   
+                <a href="https://github.com/zignago" target="_blank"> [github] </a>   
             </h3>
             <ul>
                 <lo><b>Education</b></lo>
                 <li>M.S. Computer Science<br>University of California, Los Angeles, 2024</li>
                 <li>B.S. Computer Science<br>University of Missouri, 2023</li>
             </ul>
-            <ul>
-                <lo><b>Experience</b></lo>
-                <li>Cisco Meraki - Software Engineer</li>
-                <li>Cisco Meraki - Software Engineer Intern</li>
-                <li>Johns Hopkins University Applied Physics Lab - Software Engineer Intern</li>
-                <li>MITRE - Software Engineer Intern</li>
-            </ul>
-            <ul>
-                <lo><b>Projects</b></lo>
-                <li>M-SAT</li>
-                <li>MRDT</li>
-                <li>Multilingual LLM</li>
-                <li>Tiger Identification</li>
-                <li>Zero Trust Drone Networking</li>
-            </ul>
+
+            <div class="experience-container">
+                <div class="experience-header">Experience</div>
+                
+                <div class="experience-item">
+                    <a href="https://github.com/zignago/Multilingual-LLM" target="_blank">
+                        <span class="role">UCLA - Graduate NLP Researchers</span>
+                        <span class="description">
+                            Worked with UCLA CS faculty to develop a method for evaluating cross-language reasoning capabilities of 23 LLMs.
+                        </span>
+                    </a>
+                </div>
+        
+                <div class="experience-item">
+                    <a href="https://meraki.cisco.com/" target="_blank">
+                        <span class="role">Cisco Meraki - Software Engineer</span>
+                        <span class="description">
+                            Designed and implemented scalable network tools and real-time streaming systems for MS switches.
+                        </span>
+                    </a>
+                </div>
+        
+                <div class="experience-item">
+                    <a href="https://meraki.cisco.com/" target="_blank">
+                        <span class="role">Cisco Meraki - Software Engineer Intern</span>
+                        <span class="description">
+                            Intrusion prevention and detection for MX security & SD-WAN enterprise appliances.
+                        </span>
+                    </a>
+                </div>
+        
+                <div class="experience-item">
+                    <a href="https://engineering.missouri.edu/ceri-center/" target="_blank">
+                        <span class="role">University of Missouri - Distributed Systems Researchers</span>
+                        <span class="description">
+                            Network security and efficiency research for collaborative, edge-enabled drone swarms.
+                        </span>
+                    </a>
+                </div>
+        
+                <div class="experience-item">
+                    <a href="https://www.jhuapl.edu/" target="_blank">
+                        <span class="role">Johns Hopkins University Applied Physics Lab - Software Engineer Intern</span>
+                        <span class="description">
+                            Developed secure automation tools and RESTful APIs using Docker, Spring Boot and PostgreSQL to streamline testing processes for government networks.
+                        </span>
+                    </a>
+                </div>
+        
+                <div class="experience-item">
+                    <a href="https://www.mitre.org/news-insights/impact-story/tackling-cyberthreats-and-outer-space" target="_blank">
+                        <span class="role">MITRE - Software Engineer Intern</span>
+                        <span class="description">
+                            Created a prototype simulator from the ground-up to assess proliferated low Earth orbit satellite network resiliency.
+                        </span>
+                    </a>
+                </div>
+
+
+
+
+
+                <div class="experience-header">Projects</div>
+                
+                <div class="experience-item">
+                    <a href="https://github.com/yichunlo/Lightweight_Animal_Body_Parts_Detection_on_Edge_Device" target="_blank">
+                        <span class="role">Tiger Tracking for Edge AI</span>
+                        <span class="description">
+                            Collaborated with the San Diego Zoo to develop a lightweight machine learning model for real-time tracking of tigers on edge devices using hierarchical bounding boxes
+                        </span>
+                    </a>
+                </div>
+        
+                <div class="experience-item">
+                    <a href="https://msat.mst.edu/" target="_blank">
+                        <span class="role">Missouri S&T Satellite Research Team (M-SAT)</span>
+                        <span class="description">
+                            Directed development of data-handling software for a satellite testing stereoscopic imaging, ensuring successful launch into low Earth orbit in May 2024. 
+                        </span>
+                    </a>
+                </div>
+        
+                <div class="experience-item">
+                    <a href="https://github.com/MissouriMRDT" target="_blank">
+                        <span class="role">Missouri S&T Mars Rover Design Team (MRDT)</span>
+                        <span class="description">
+                            Recruited and mentored a 7-person Agile team to design, develop, and test C++ code for a multi-terrain robot; 3rd place finish out of 36 teams at the 2021 University Rover Challenge. 
+                        </span>
+                    </a>
+                </div>
+        
+            </div>
+
             <ul>
                 <lo><b>Contact</b></lo>
                 <li><a href="mailto:contact@gianzignago.com">contact@gianzignago.com</a><br><br><br></li>
