@@ -10,121 +10,128 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: black; /* Match the image's background */
+            background-color: black;
             font-family: 'Rubik', sans-serif;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            height: 100vh;
+            align-items: center;
+            color: white;
         }
 
         /* Image Container */
-    .image-container {
-        position: relative; /* Allows positioning of overlay elements */
-        display: inline-block; /* Keeps image and overlay together */
-    }
+        .image-container {
+            position: relative;
+            max-width: 90%; /* Ensure the image doesn't exceed screen width */
+        }
 
-    .profile-image {
-        width: 1000px; /* Adjust image width */
-        height: auto; /* Maintain aspect ratio */
-    }
+        .profile-image {
+            margin-top: 5vw;
+            width: 100%; /* Make the image fluid */
+            height: auto; /* Maintain aspect ratio */
+        }
 
-    /* Overlay Styling */
-    .overlay {
-        position: absolute;
-        bottom: 10%; /* Position overlay text vertically on the image */
-        left: 12%; /* Position overlay text horizontally */
-        color: white; /* Text color */
-        line-height: .9; /* Improve text readability */
-        font-size: 28px; /* Adjust text size */
-        font-weight: 300;
-    }
+        /* Overlay Styling */
+        .overlay {
+            position: absolute;
+            bottom: 10%; /* Position overlay text vertically on the image */
+            left: 10%; /* Position overlay text horizontally */
+            color: white;
+            line-height: .00002; /* Improve text readability */
+            font-size: 3vw; /* Relative size for responsiveness */
+            font-weight: 300;
+        }
 
-    /* Underline GIF Styling */
-    .underline {
-        background: url('assets/images/underline.gif') no-repeat left center; /* Align GIF to the left */
-        background-size: 100% 8px; /* Adjust the size of the GIF */
-        height: 7px; /* Match GIF height */
-        width: 185px; /* Adjust underline width */
-        margin-top: 4px; /* Add slight spacing above the underline */
-        margin-bottom: 5px; /* Add slight spacing below the underline */
-    }
+        .underline {
+            background: url('assets/images/underline.gif') no-repeat left center;
+            background-size: 100% 8px;
+            height: 8px;
+            width: 250px;
+            margin-top: 2px;
+            margin-bottom: 5px;
+        }
 
-    /* Regular Text */
-    .overlay p {
-        margin: 0;
-    }
+        /* Content Below Image */
+        .content {
+            max-width: 90%; /* Keep content width fluid */
+            text-align: left;
+            margin-top: 20px;
+        }
 
-    /* Content Below Image */
-    .content {
-        max-width: 800px;
-        margin-top: 10px;
-        margin-left: -230px; /* Match .overlay's left value */
-        text-align: left;
-    }
+        .content h3 {
+            margin-top: 14px;
+            font-weight: 600;
+            font-size: 1.5em;
+        }
 
-    .content h2, .content h3 {
-        margin-top: 14px;
-        font-weight: 300;
-        color: white;
-    }
+        .content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 25px;
+        }
 
-    .content h3 {
-        margin-top: 15px;
-        color: white;
-    }
+        .content ul li {
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-size: 1.1em;
+        }
 
-    .content p, .content ul {
-        margin: 15px 0;
-        font-size: 16px;
-        line-height: 1.6;
-        font-weight: 300;
-        color: white;
-    }
+        .contact {
+            margin-top: 20px;
+        }
 
-    .content ul {
-        list-style: none;
-        padding-left: 0;
-        color: white;
-        line-height: 1.1;
-        margin-bottom: 25px;
-    }
+        .contact a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
 
-    .content ul li {
-        margin-bottom: 15px;
-        color: white;
-    }
+        .contact a:hover {
+            color: #dd9c1d;
+        }
 
-    /* Contact Section */
-    .contact {
-        margin-top: 20px;
-    }
+        /* Link styling */
+        a {
+            color: white;
+            text-decoration: none;
+        }
 
-    .contact a {
-        text-decoration: none;
-        margin-right: 15px;
-        color: white;
-    }
+        a:hover {
+            color: grey;
+        }
 
-    .contact a:hover {
-        text-decoration: underline;
-        color: white;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .overlay {
+                font-size: 5vw; /* Scale text for smaller screens */
+                left: 8%;
+            }
 
-    a {
-        color: white; /* White color for links */
-        text-decoration: none; /* Remove underline */
-        font-size: inherit; /* Match the font size of the surrounding text */
-        font-weight: inherit; /* Match the font weight of the surrounding text */
-    }
+            .content {
+                font-size: 1em;
+                margin-left: 0;
+                text-align: center; /* Center-align text for smaller screens */
+            }
 
-    /* Link hover effect */
-    a:hover {
-        color: #dd9c1d; /* Change link color to grey on hover */
-        text-decoration: none; /* Ensure underline remains removed on hover */
-    }
-</style>
+            .content h3 {
+                font-size: 1.5em;
+            }
+
+            .content ul li {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .overlay {
+                font-size: 6vw; /* Further reduce text size */
+                left: 5%;
+            }
+
+            .content ul li {
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="image-container">
@@ -134,26 +141,25 @@
             <div class="underline"></div>
             <p>focused on networks and scalability.</p>
         </div>
-    </div>    
+    </div>
 
     <!-- Content Below Image -->
     <div class="content">
         <h3><a href="/resume.pdf" target="_blank">[Resume]</a></h3>
-
         <ul>
-            <lo><b>Education</b></lo>
+            <li><b>Education</b></li>
             <li>M.S. Computer Science<br>University of California, Los Angeles, 2024</li>
             <li>B.S. Computer Science<br>University of Missouri, 2023</li>
         </ul>
         <ul>
-            <lo><b>Experience</b></lo>
+            <li><b>Experience</b></li>
             <li>Cisco Meraki - Software Engineer</li>
             <li>Cisco Meraki - Software Engineer Intern</li>
             <li>Johns Hopkins University Applied Physics Lab - Software Engineer Intern</li>
             <li>MITRE - Software Engineer Intern</li>
         </ul>
         <ul>
-            <lo><b>Projects</b></lo>
+            <li><b>Projects</b></li>
             <li>M-SAT</li>
             <li>MRDT</li>
             <li>Multilingual LLM</li>
@@ -161,7 +167,7 @@
             <li>Zero Trust Drone Networking</li>
         </ul>
         <ul>
-            <lo><b>Contact</b></lo>
+            <li><b>Contact</b></li>
             <li><a href="mailto:contact@gianzignago.com">contact@gianzignago.com</a></li>
         </ul>
         <div class="contact">
